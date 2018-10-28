@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<title>Circular UI</title>
+<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)"
+	href="lib/tau/wearable/theme/default/tau.circle.min.css">
+<!-- load theme file for your application -->
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-2.1.4.js"></script>
+</head>
+<body>
+	<!--  Song list display -->
+	 <div class="ui-page ui-page-active" id="tabmain">
+		<header class="ui-header">
+			<h2 class="ui-title">악보 List</h2>
+		</header>
+
+	
+		<div class="ui-content" id="tablist">
+			<ul class="ui-listview" id="listcontent">
+				<li class="chorditem"><a href="list1">본능적으로</a></li>
+				<li class="chorditem"><a href="list1">Falling Slowly</a></li>
+				<li class="chorditem"><a href="list1">List3</a></li>
+				<li class="chorditem"><a href="list1">List4</a></li>
+				<li class="chorditem"><a href="list1">List5</a></li>
+				<li class="chorditem"><a href="list1">List6</a></li>
+				<li class="chorditem"><a href="list1">List7</a></li>
+				<li class="chorditem"><a href="list1">List8</a></li>
+				<li class="chorditem"><a href="list1">List9</a></li>
+				<li class="chorditem"><a href="list1">List10</a></li> 
+			</ul>
+		</div>
+		
+	</div>
+	<!--  song list end -->
+	<div class="ui-page" id="list1">
+			<div class="ui-header">
+			<h5><b></b></h5>
+			</div>
+			<!--  <div class="ui-content">-->
+		<li><a href="list1_content" onclick="func_confirm()"><div class="mainbtn1"><br>곡 재생</div></a></li>
+		<li><a href="list1_content2"><div class="mainbtn2"><br>스트로크</div></a></li>
+		<script>
+			var isshow;
+			function func_confirm() {
+				if (confirm('코드를 보겠습니까?')) {
+					tau.changePage("#list1_content_show");
+					return isshow=1;
+					
+				} 
+				else {
+					tau.changePage("#list1_content_noshow");
+					return isshow=0;
+				}
+			}
+		</script>
+		<!--  </div>-->
+	</div>
+	<!--  play page no show -->
+	<div class="ui-page" id="list1_content_noshow">
+		<div class="ui-header" style="height:50px">
+			<h5 class=mtitle><b></b></h5>
+		</div>
+			<!--<li class="prev_chord"><strong>X</strong></li>
+			<li class="cur_chord"><strong>X</strong></li>
+			<li class = "next_chord"><strong>X</strong></li>-->
+			<li><img src="img/1.jpg" class="prev_chord" width=90px height=50px /></li>
+			<li><img src="img/4.jpg" class="cur_chord"  width=90px height=50px /></li>
+			<li><img src="img/3.jpg" class="next_chord" width=90px height=50px /></li>
+		<div class="lyrics">
+			<hr>
+			<div class="ss">start</div>
+			<li class="lylics"><p></p></li>
+		</div>
+	</div>
+
+	<!--  play page show -->
+		<div class = "ui-page" id="list1_content_show">
+			<div class="ui-header" style="height:50px">
+			<h5 class=mtitle><b></b></h5>
+		</div>
+		
+			<!--  <li class="cur_chord_s" width=100px height=150><strong>X</strong></li>-->
+			<li><img src="img/1.jpg" class="cur_chord_s" width=90px height=134px /></li>
+			<li><img src="img/4.jpg" class="chord_tab_s" width=178px height=134px /></li>
+			
+				
+				<div class="lyrics">
+					<hr>
+					<div class="ss">start</div>
+					<!--<button class="ss" style="width:100px; height:50px"><font size='2pt'>start</font></button>-->
+					
+					<li class="lylics"><p></p></li>
+				</div>
+		</div>
+		<div class="ui-page" id="list1_content2">
+		
+			<div class="ui-header" style="height:50px">
+				<h4>STROKE</h4>
+			</div>
+				<li><img src="img/calypso2.jpg" class="stroke" width=200px height=150/></li>
+		</div>
+		
+		
+	
+	<script src="js/chord_control.js"></script>
+	<script type="text/javascript" src="lib/tau/wearable/js/tau.js"></script>
+	<script type="text/javascript" src="js/circle-helper.js"></script>
+	<script src="app.js"></script>
+	<script src="lowBatteryCheck.js"></script>
+</body>
+</html>
